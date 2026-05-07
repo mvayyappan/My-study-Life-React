@@ -1,0 +1,146 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #000000;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 800;
+    color: #0091ff;
+    transition: transform 0.2s;
+}
+
+.logo:hover {
+    transform: translateY(-1px);
+}
+
+.logo i {
+    font-size: 36px;
+}
+
+.logo span {
+    letter-spacing: -1px;
+}
+
+.nav_links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.nav_links a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 16px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #000000;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.nav_links a:hover {
+    background: linear-gradient(135deg, #5b7fd8 0%, #7b6ab8 50%, #9b5fa8 100%);
+    color: #ffffff;
+}
+
+/* Login button (last anchor before logout) */
+.nav_links li:last-child a {
+    background: #3a0ca3;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.nav_links li:last-child a:hover {
+    opacity: 0.9;
+    background: linear-gradient(135deg, #5b7fd8 0%, #7b6ab8 50%, #9b5fa8 100%);
+}
+
+/* Logout button — same style as Login button */
+.nav-logout-btn {
+    background: #3a0ca3;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-logout-btn:hover {
+    background: linear-gradient(135deg, #5b7fd8 0%, #7b6ab8 50%, #9b5fa8 100%);
+    opacity: 0.95;
+}
+
+/* Hamburger button (mobile) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #3a0ca3;
+}
+
+/* Mobile responsive */
+/* User's selected course — highlighted */
+.nav_links .course-nav-link {
+    background: linear-gradient(135deg, #3a0ca3, #7b6ab8);
+    color: #ffffff !important;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.nav_links .course-nav-link:hover {
+    opacity: 0.9;
+    background: linear-gradient(135deg, #5b7fd8, #9b5fa8);
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav_links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+        align-items: flex-start;
+    }
+
+    .nav_links.open {
+        display: flex;
+    }
+
+    .nav_links a,
+    .nav-logout-btn {
+        width: 100%;
+    }
+}
