@@ -29,7 +29,7 @@ export default function QuizSelection() {
     let res = [...quizzes]
     if (activeGrade !== 'All') res = res.filter(q => String(q.grade) === activeGrade)
     if (activeSubject !== 'All') res = res.filter(q => q.subject === activeSubject)
-    if (activeDiff !== 'All') res = res.filter(q => q.difficulty === activeDiff)
+    if (activeDiff !== 'All') res = res.filter(q => (q.difficulty || 'Medium') === activeDiff)
     setFiltered(res)
   }, [activeGrade, activeSubject, activeDiff, quizzes])
 

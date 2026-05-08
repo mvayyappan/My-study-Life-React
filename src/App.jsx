@@ -37,7 +37,7 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/My-study-Life-React">
       <AuthProvider>
         <AppContent />
       </AuthProvider>
