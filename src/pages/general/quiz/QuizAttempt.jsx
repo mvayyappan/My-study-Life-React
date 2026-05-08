@@ -56,11 +56,7 @@ export default function QuizAttempt() {
     setSubmitted(true)
 
     try {
-      const payload = questions.map(q => ({
-        question_id: q.id,
-        selected_answer: answers[q.id] ?? null
-      }))
-      await submitQuizAttempt(id, payload)
+      await submitQuizAttempt(id, answers)
     } catch (e) {
       console.error('Submit error:', e)
     }

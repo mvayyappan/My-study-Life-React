@@ -45,7 +45,7 @@ export default function Profile() {
   const totalQuizzes = progress?.total_quizzes ?? 0
   const avgScore = progress?.average_score ? `${Math.round(progress.average_score)}%` : '0%'
   const accuracy = progress?.accuracy ? `${Math.round(progress.accuracy)}%` : '0%'
-  const streak = progress?.streak ?? 0
+  const streak = progress?.current_streak ?? 0
   const totalQs = progress?.total_questions ?? 0
   const correctAnswers = progress?.correct_answers ?? 0
   const studyHours = progress?.study_hours ?? 0

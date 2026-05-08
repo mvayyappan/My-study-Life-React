@@ -142,7 +142,7 @@ export const submitQuizAttempt = submitQuiz
 
 // ─── PROGRESS ─────────────────────────────────────────
 export const getProgress = async () => {
-  const res = await fetch(`${BASE_URL}/api/progress/user`, { headers: authHeaders() })
+  const res = await fetch(`${BASE_URL}/api/progress/stats`, { headers: authHeaders() })
   if (!res.ok) throw await res.json()
   return res.json()
 }

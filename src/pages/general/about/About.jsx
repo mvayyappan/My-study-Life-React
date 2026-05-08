@@ -14,7 +14,7 @@ function About() {
 
       <div className="container">
         <div className="story-section">
-          <h2 className="section-title">
+          <h2 className="section2-title">
             <span className="section-icon"><i className="fa-solid fa-book-open"></i></span>
             Our Story
           </h2>

@@ -17,6 +17,7 @@
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+
 .hero-content p {
     font-size: 20px;
     margin-bottom: 50px;
@@ -97,6 +98,7 @@
     text-align: center;
     color: #1a1a1a;
     margin-bottom: 15px;
+    padding: 20p;
 }
 
 .section-subtitle {
