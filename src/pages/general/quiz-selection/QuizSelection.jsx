@@ -29,7 +29,17 @@ export default function QuizSelection() {
     let res = [...quizzes]
     if (activeGrade !== 'All') res = res.filter(q => String(q.grade) === activeGrade)
     if (activeSubject !== 'All') res = res.filter(q => q.subject === activeSubject)
-    if (activeDiff !== 'All') res = res.filter(q => (q.difficulty || 'Medium') === activeDiff)
+    if (activeDiff !== 'All') {
+      res = res.filter(q => {
+        if (q.difficulty) return q.difficulty === activeDiff
+        // Fallback: Check title if difficulty field is missing in DB
+        const title = q.title.toLowerCase()
+        if (activeDiff === 'Easy' && title.includes('easy')) return true
+        if (activeDiff === 'Hard' && title.includes('hard')) return true
+        if (activeDiff === 'Medium' && !title.includes('easy') && !title.includes('hard')) return true
+        return false
+      })
+    }
     setFiltered(res)
   }, [activeGrade, activeSubject, activeDiff, quizzes])
 
